@@ -1,0 +1,58 @@
+.to-do-list {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+h1{
+  font-size: 4rem;
+}
+
+button{
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.add-button, .delete-button, .complete{
+  background-color: grey
+}
+.add-button:hover, .delete-button:hover, .complete:hover{
+  background-color: rgb(50, 50, 50)
+}
+
+input[type="text"]{
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  color: black;
+  margin-right: 10px;
+}
+
+ol{
+  padding: 0;
+}
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.text{
+  flex: 1;
+}
+
+.delete-button, .complete{
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
