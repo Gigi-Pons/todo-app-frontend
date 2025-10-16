@@ -14,7 +14,7 @@ function Task() {
     //This effect runs once and populates the tasks array with data fetched from 
     //the backend
     useEffect(() => {
-        axios.get("http://localhost:8080/tasks/getAllTasks")
+        axios.get("http://backend:8080/tasks/getAllTasks")
             .then(res => {
                 setTasks(res.data)
             })
@@ -35,7 +35,7 @@ function Task() {
   function addTask() {
     if (newTask.trim() !== "") {
       axios
-        .post("http://localhost:8080/tasks/add", {
+        .post("http://backend:8080/tasks/add", {
           task: newTask,
           completed: false,
         })
@@ -53,7 +53,7 @@ function Task() {
   //the id that was deleted out of the new array
   function deleteTask(id) {
     axios
-      .delete(`http://localhost:8080/tasks/delete/${id}`)
+      .delete(`http://backend:8080/tasks/delete/${id}`)
       .then(() => setTasks(tasks.filter(t => t.id !== id)))
       .catch(err => console.error("Error deleting task:", err));
   }
@@ -64,7 +64,7 @@ function Task() {
   //array using map and updates the state immutably
   function markComplete(id) {
     axios
-      .patch(`http://localhost:8080/tasks/${id}/completed`)
+      .patch(`http://backend:8080/tasks/${id}/completed`)
       .then(res =>
         setTasks(tasks.map(t => (t.id === id ? { ...t, completed: true } : t)))
       )
